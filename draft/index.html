@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="记录工作和学习文档">
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>Draft - 我的笔记</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="..">我的笔记</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../keymap/">快捷方式</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">文章 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">大数据</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../%E6%96%87%E7%AB%A0/%E5%A4%A7%E6%95%B0%E6%8D%AE/alluxio/">Alluxio</a>
+</li>
+
+        
+            
+<li >
+    <a href="../%E6%96%87%E7%AB%A0/%E5%A4%A7%E6%95%B0%E6%8D%AE/hudi/">Hudi</a>
+</li>
+
+        
+            
+<li >
+    <a href="../%E6%96%87%E7%AB%A0/%E5%A4%A7%E6%95%B0%E6%8D%AE/spark-streaming/">Spark</a>
+</li>
+
+        
+            
+<li >
+    <a href="../%E6%96%87%E7%AB%A0/%E5%A4%A7%E6%95%B0%E6%8D%AE/yarn/">Yarn</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">数据库</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../%E6%96%87%E7%AB%A0/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/Canal%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">Canal</a>
+</li>
+
+        
+            
+<li >
+    <a href="../%E6%96%87%E7%AB%A0/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/LogMiner/">LogMinor</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">MySQL</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../%E6%96%87%E7%AB%A0/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/MySQL%20GTID%20set%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/">GTID</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">日记</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../%E6%96%87%E7%AB%A0/%E6%97%A5%E8%AE%B0/A-Voyager_%E8%B5%B7%E8%88%AA/">起航</a>
+</li>
+
+        
+            
+<li >
+    <a href="../%E6%96%87%E7%AB%A0/%E6%97%A5%E8%AE%B0/Diary-%E8%88%AA%E8%A1%8C%E6%97%A5%E5%BF%97/">航行日志</a>
+</li>
+
+        
+            
+<li >
+    <a href="../%E6%96%87%E7%AB%A0/%E6%97%A5%E8%AE%B0/Engine-1_%E5%86%A5%E6%83%B3%E4%BD%93%E6%82%9F/">Engine1-冥想</a>
+</li>
+
+        
+            
+<li >
+    <a href="../%E6%96%87%E7%AB%A0/%E6%97%A5%E8%AE%B0/Engine-3_%E5%B1%80%E5%A4%96%E4%BA%BA/">Engine3-局外人</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">java <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../%E6%96%87%E7%AB%A0/java%E6%8A%80%E6%9C%AF/idea/">IDEA</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../ToDo/">ToDo</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="https://github.com/arcticXXX">GitHub</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#31">3月1日</a></li>
+        <li class="first-level "><a href="#32">3月2日</a></li>
+            <li class="second-level"><a href="#_1">配置</a></li>
+                
+            <li class="second-level"><a href="#_2">同步</a></li>
+                
+            <li class="second-level"><a href="#_3">合并</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<p>NDC创新点：</p>
+<ul>
+<li>一拉多推（太老了）</li>
+<li>产品层面的功能更直观一些</li>
+<li>需要在用户侧产生价值</li>
+<li>项目体系改造（太老了）</li>
+<li>需要有创新点</li>
+<li>双向同步</li>
+</ul>
+<p>和用户在一起：</p>
+<ul>
+<li>主动和被动</li>
+<li>源端检查功能</li>
+<li>了解用户的场景和需求</li>
+<li>不是本职工作。。。。。</li>
+</ul>
+<p>报警组功能</p>
+<p>自动适配GTID</p>
+<p>EasyStream 需求、接口设计 功能开发 测试 上线</p>
+<p>jvm配置、监控</p>
+<p>配置文件配置</p>
+<p>暴露日志</p>
+<p>规范的ErrorCode和对应运维文档</p>
+<p>意见反馈</p>
+<p>处理方案</p>
+<p>文件位置回退位置点</p>
+<p>查看表结构</p>
+<p>出现频繁报zk失连的问题</p>
+<p><img alt="image-20210202102422186" src="/Users/wangtao/notes/image-20210202102422186.png" /></p>
+<p>engine</p>
+<p>https://cmdb-new.netease.com/index#/cluster/page/cluster?pageNumber=1&amp;pageSize=15&amp;searchWord=&amp;isAdmin=false&amp;pid=691829</p>
+<p>添加机器列表</p>
+<p>meety-ndc-1.online.meety.sg
+meety-ndc-3.online.meety.sg
+meety-ndc-4.online.meety.sg
+meety-ndc-2.online.meety.sg</p>
+<p>10.99.130.8</p>
+<p>10.99.144.219</p>
+<p>10.99.131.115</p>
+<p>10.99.137.159</p>
+<p>https://ndp.netease.com/index-new#/cluster/detail/base?productId=9112&amp;appId=362270&amp;clusterId=691834</p>
+<p>https://ndp.netease.com/index-new#/cluster/detail/base?productId=9112&amp;appId=362272&amp;clusterId=691829</p>
+<p>https://ndp.netease.com/index-new#/cluster/detail/base?productId=9112&amp;appId=362275&amp;clusterId=691830</p>
+<p>dashboard</p>
+<p>https://cmdb-new.netease.com/index#/cluster/page/cluster?pageNumber=1&amp;pageSize=15&amp;searchWord=&amp;isAdmin=false&amp;pid=691830</p>
+<p>添加机器列表</p>
+<p>meety-ndc-1.online.meety.sg</p>
+<p>10.99.130.8</p>
+<p>center</p>
+<p>https://cmdb-new.netease.com/index#/cluster/page/cluster?pageNumber=1&amp;pageSize=15&amp;searchWord=&amp;isAdmin=false&amp;pid=691834</p>
+<p>添加机器列表</p>
+<p>meety-ndc-1.online.meety.sg
+meety-ndc-3.online.meety.sg</p>
+<p>10.99.130.8</p>
+<p>10.99.144.219</p>
+<p>10.99.128.236:2181,10.99.139.180:2181,10.99.147.55:2181</p>
+<p>ndc_meety_online</p>
+<p>CID_middle_userread_ndc_Order CID_middle_userbase_ndc_Order</p>
+<p>meety-rds.c2cca8sxr9pj.ap-southeast-1.rds.amazonaws.com:3306</p>
+<p>ndc/sudhus8sidhf</p>
+<p>mysql -hmeety-rds.c2cca8sxr9pj.ap-southeast-1.rds.amazonaws.com -undc -psudhus8sidhf</p>
+<h2 id="31">3月1日<a class="headerlink" href="#31" title="Permanent link">&para;</a></h2>
+<p><img alt="image-20210301113401596" src="/Users/wangtao/notes/image-20210301113401596.png" /></p>
+<p>mysql&gt; select * from source_db where dbId = 46899\G
+<strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em>* 1. row </strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong>****
+               dbId: 46899
+         fatherDbId: -1
+       instanceName: qiyemail_biz_std
+               name: NULL
+               type: Oracle
+               host: 192.168.224.210/qiyemailstd210
+               port: 9147
+               user: biz
+             passwd: iLvjEGxf0Uu2Gk1wxzG9cA==
+          projectId: 200
+        projectName: hmail
+         createTime: 2021-03-01 16:28:55
+      maxBinlogDump: 5
+maxFullExtractCount: 50
+            version: 4.6+
+      ddbIdentifier: NULL
+           managers: hzguanminxian,hzzhaoxin,zhuzemin,yinshan,shutan
+     isProbeEnabled: 0
+      probeDatabase:
+         probeTable:
+        probeColumn:
+      probeInterval: 0
+1 row in set (0.00 sec)</p>
+<p>mysql&gt; select * from source_db where dbId = 46899\G
+<strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em>* 1. row </strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong>****
+               dbId: 46899
+         fatherDbId: -1
+       instanceName: qiyemail_biz_pri
+               name: NULL
+               type: Oracle
+               host: 10.105.141.70/qiyemail
+               port: 9147
+               user: biz
+             passwd: iLvjEGxf0Uu2Gk1wxzG9cA==
+          projectId: 200
+        projectName: hmail
+         createTime: 2021-03-01 16:28:55
+      maxBinlogDump: 5
+maxFullExtractCount: 50
+            version: 4.6+
+      ddbIdentifier: NULL
+           managers: hzguanminxian,hzzhaoxin,zhuzemin,yinshan,shutan
+     isProbeEnabled: 0
+      probeDatabase:
+         probeTable:
+        probeColumn:
+      probeInterval: 0
+1 row in set (0.01 sec)</p>
+<h2 id="32">3月2日<a class="headerlink" href="#32" title="Permanent link">&para;</a></h2>
+<p>10.130.74.38:31888/music_platform_dev_31777   &ndash;&gt; 10.170.161.40:31888/music_platform_dev_31777 </p>
+<pre><code class="language-sql">select host,port from source_db where dbId in (37493,34056);update source_db set host = '10.170.161.40',port = 31888 where dbId in (37493,34056);#migJobs:7492 5122 5121 5118 5117 4156 3623 3595 3594 3591 3331 3202 3201 3179 3175 3168 2924 2889 1666 1637;#subJobs:2129 2128 2012 2004 1931 1031;
+</code></pre>
+<p>10.130.74.38:33888/music_p1_dev_33777         &ndash;&gt; 10.170.161.40:33888/music_p1_dev_33777 </p>
+<p>10.130.74.38:32888/music_p1_dev_32777         &ndash;&gt; 10.170.161.40:32888/music_p1_dev_32777 </p>
+<pre><code class="language-sql">select host,port from source_db where dbId in (45789,41714);update source_db set host = '10.170.161.40',port = 32888 where dbId in (45789,41714);#migJobs:;#subJobs:2010;
+</code></pre>
+<p>10.130.74.38:41888/music_songstore_dev_41777  &ndash;&gt; 10.170.161.40:41888/music_songstore_dev_41777 </p>
+<p>10.130.74.38:43888/music_songstore_dev_43777  &ndash;&gt; 10.170.161.40:43888/music_songstore_dev_43777 </p>
+<p>10.130.75.19:58888/music_musician_test        &ndash;&gt; 10.170.161.40:58888/music_musician_test </p>
+<p>10.130.75.19:32888/music_p0p1_test            &ndash;&gt; 10.170.161.40:36888/music_p0p1_test </p>
+<p>10.130.75.19:33888/music_p0p1_ro_test         &ndash;&gt; 10.170.161.40:39888/music_p0p1_ro_test </p>
+<p>10.130.74.38:61888/music_copyright_test       &ndash;&gt; 10.170.161.40:61888/music_copyright_test 
+10.130.74.38:34888/music_platform_dev_34777   &ndash;&gt; 10.170.161.40:34888/music_platform_dev_34777
+10.130.74.38:7188/music_fp_test_7177          &ndash;&gt; 10.170.161.40:7188/music_fp_test_7177 </p>
+<pre><code class="language-sql">select host,port from source_db where dbId in (41231);update source_db set host = '10.170.161.40',port = 7188 where dbId in (41231);#migJobs:;#subJobs:;
+</code></pre>
+<p>10.130.74.38:35888/music_platform_dev_35777   &ndash;&gt; 10.170.161.40:35888/music_platform_dev_35777 
+10.130.75.19:38888/music_bi_test              &ndash;&gt; 10.170.161.40:38888/music_bi_test </p>
+<pre><code class="language-sql">select host,port from source_db where dbId in (34059);update source_db set host = '10.170.161.40',port = 38888 where dbId in (34059);#migJobs:5137 3354;#subJobs:2225;
+</code></pre>
+<p>10.130.74.38:42888/music_songstore2_dev_42777 &ndash;&gt; 10.170.161.40:42888/music_songstore2_dev_42777</p>
+<pre><code class="language-sql">select host,port from source_db where dbId in (34061);update source_db set host = '10.170.161.40',port = 42888 where dbId in (34061);#migJobs:7651 3681;#subJobs:;
+</code></pre>
+<p>测试环境</p>
+<p>10.130.74.38:31888/music_platform_dev_31777   &ndash;&gt; 10.170.161.40:31888/music_platform_dev_31777 </p>
+<pre><code class="language-sql">select host,port from source_db where dbId in (187,7);update source_db set host = '10.170.161.40',port = 31888 where dbId in (187,7);#migJobs:139 167 165 155 138 113 104 102 72 57 54;#subJobs:1427 1425 1423 1419 1411 1385 1384 1383 1379 1376 1375 1374 1373 1372 1367 1366 1363 1360 1357 1352 1346 1343 1342 1339 1338 1336 1330 1327 1320 1319 1318 1317 1316 1315 1314 1313 1309 1306 1302 1301 1297 1291 1281 1279 1278 1277 1276 1270 1269 1266 1245 1244 1242 1240 1239 1235 1233 1232 1228 1223 1222 1217 1216 1211 1207 1193 1192 1191 1190 1180 1179 1172 1019 788 786 785 780 775 763 753 558 557 550 532 531 334 315 314 312 311 310 308 301 300 284 270 233 227 225 200 199;
+</code></pre>
+<p>10.130.74.38:33888/music_p1_dev_33777         &ndash;&gt; 10.170.161.40:33888/music_p1_dev_33777 </p>
+<pre><code class="language-sql">select host,port from source_db where dbId in (19);update source_db set host = '10.170.161.40',port = 33888 where dbId in (19);#migJobs:;#subJobs:1356 306 304;
+</code></pre>
+<p>10.130.74.38:32888/music_p1_dev_32777         &ndash;&gt; 10.170.161.40:32888/music_p1_dev_32777 </p>
+<pre><code class="language-sql">select host,port from source_db where dbId in (2);update source_db set host = '10.170.161.40',port = 32888 where dbId in (2);#migJobs:;#subJobs:1473 1472 1471 1469 1392 1322 1286 1253 1252 1249 1241 1231 1219 1218 1214 1213 269 268 76 66;
+</code></pre>
+<p>10.130.74.38:41888/music_songstore_dev_41777  &ndash;&gt; 10.170.161.40:41888/music_songstore_dev_41777 </p>
+<pre><code class="language-sql">select host,port from source_db where dbId in (10);update source_db set host = '10.170.161.40',port = 41888 where dbId in (10);#migJobs:100 61 55;#subJobs:1369 1285 1261 1171 533 281;
+</code></pre>
+<p>10.130.74.38:43888/music_songstore_dev_43777  &ndash;&gt; 10.170.161.40:43888/music_songstore_dev_43777 </p>
+<p>10.130.75.19:58888/music_musician_test        &ndash;&gt; 10.170.161.40:58888/music_musician_test </p>
+<pre><code class="language-sql">select host,port from source_db where dbId in (5);update source_db set host = '10.170.161.40',port = 58888 where dbId in (5);#migJobs:;#subJobs:1337 1331 1282 1280 136;
+</code></pre>
+<p>10.130.75.19:32888/music_p0p1_test            &ndash;&gt; 10.170.161.40:36888/music_p0p1_test </p>
+<pre><code class="language-sql">select host,port from source_db where dbId in (37);update source_db set host = '10.170.161.40',port = 36888 where dbId in (37);#migJobs:97 11;#subJobs:1413 1226;
+</code></pre>
+<p>10.130.75.19:33888/music_p0p1_ro_test         &ndash;&gt; 10.170.161.40:39888/music_p0p1_ro_test </p>
+<pre><code class="language-sql">select host,port from source_db where dbId in (40);update source_db set host = '10.170.161.40',port = 39888 where dbId in (40);#migJobs:19 14;#subJobs:1227;
+</code></pre>
+<p>10.130.74.38:61888/music_copyright_test       &ndash;&gt; 10.170.161.40:61888/music_copyright_test 
+10.130.74.38:34888/music_platform_dev_34777   &ndash;&gt; 10.170.161.40:34888/music_platform_dev_34777</p>
+<pre><code class="language-sql">select host,port from source_db where dbId in (108);update source_db set host = '10.170.161.40',port = 34888 where dbId in (108);#migJobs:163 162 60 59 47 45 43 26;#subJobs:1453 1408 1391 1378 1365 1364 1335 1312 1305 1304 1303 1289;
+</code></pre>
+<p>10.130.74.38:7188/music_fp_test_7177          &ndash;&gt; 10.170.161.40:7188/music_fp_test_7177 </p>
+<pre><code class="language-sql">
+</code></pre>
+<p>10.130.74.38:35888/music_platform_dev_35777   &ndash;&gt; 10.170.161.40:35888/music_platform_dev_35777 </p>
+<pre><code class="language-sql">select host,port from source_db where dbId in (220,145);update source_db set host = '10.170.161.40',port = 35888 where dbId in (220,145);#migJobs:154 164 125 124 123 112 96 95 93 92 75 71 70 63;#subJobs:1462 1457 1455 1441 1428 1422 1420 1418 1417 1416 1409 1390 1386 1381 1380 1377 1371 1370 1362 1361 1359 1350 1349 1347 1308 1295 1294 1260 1259 1255 1247 1246;
+</code></pre>
+<p>10.130.75.19:38888/music_bi_test              &ndash;&gt; 10.170.161.40:38888/music_bi_test </p>
+<pre><code class="language-sql">select host,port from source_db where dbId in (120);update source_db set host = '10.170.161.40',port = 38888 where dbId in (120);#migJobs:;#subJobs:1290;
+</code></pre>
+<p>10.130.74.38:42888/music_songstore2_dev_42777 &ndash;&gt; 10.170.161.40:42888/music_songstore2_dev_42777</p>
+<pre><code class="language-sql">select host,port from source_db where dbId in (27);update source_db set host = '10.170.161.40',port = 42888 where dbId in (27);#migJobs:101;#subJobs:1477 1470 1454 1368 1283 1262 1021 553;
+</code></pre>
+<p>hudi文件索引</p>
+<p><img alt="image-20210309150835638" src="/Users/wangtao/notes/image-20210309150835638.png" /></p>
+<p><img alt="image-20210309151139189" src="/Users/wangtao/notes/image-20210309151139189.png" /></p>
+<p><img alt="image-20210309150901342" src="/Users/wangtao/notes/image-20210309150901342.png" /></p>
+<p><img alt="image-20210309150949167" src="/Users/wangtao/notes/image-20210309150949167.png" /></p>
+<p>运维问题：</p>
+<p>1.磁盘故障问题</p>
+<p>2.创建子进程超时问题</p>
+<p>3.DBI端口耗光的问题</p>
+<p>4.心遇出海项目</p>
+<p>开发：</p>
+<p>arctic-server</p>
+<p>arctic-server元数据管理的问题：</p>
+<p>arctic-server系统库和文件系统元数据的一致性：</p>
+<p>arctic-server提供元数据的API：</p>
+<p>arctic-server提供基于hive的TableManager（比基于sysdb的TableManager缩小一层）：认证信息的配置怎么获取</p>
+<p><img alt="image-20210322175315467" src="/Users/wangtao/notes/image-20210322175315467.png" /></p>
+<p><img alt="image-20210329153910304" src="/Users/wangtao/notes/image-20210329153910304.png" /></p>
+<p>binlog.000190:881256494</p>
+<p><img alt="image-20210329155222214" src="/Users/wangtao/notes/image-20210329155222214.png" /></p>
+<p><img alt="image-20210329154228964" src="/Users/wangtao/notes/image-20210329154228964.png" /></p>
+<p><img alt="image-20210329155307816" src="/Users/wangtao/notes/image-20210329155307816.png" /></p>
+<p><img alt="image-20210329164453946" src="/Users/wangtao/notes/image-20210329164453946.png" /></p>
+<p>1.硬件（source \target的配置） </p>
+<p>源端/目标端（同一台Oracle）机器配置：59.111.211.45</p>
+<p>cpu: 32核心  Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz 内存：128G</p>
+<p>NDC执行机器配置：59.111.211.44</p>
+<p>cpu:32核心  Intel(R) Xeon(R) CPU E5-2440 v2 @ 1.90GHz 内存：96G</p>
+<p>2.同步的速度（不仅能知道行数，也能知道MB数）</p>
+<p>速度MB/s估算方法=表实际总大小/同步总时间</p>
+<p>NDC_TEST_FIELD_200表实际占用的空间大小（682M）</p>
+<p>NDC_TEST_FIELD_200_M表实际占用的空间大小（2.1G）</p>
+<p>select num_rows * avg_row_len from user_tables where table_name = &lsquo;NDC_TEST_FIELD_200&rsquo;;</p>
+<p>select num_rows * avg_row_len from user_tables where table_name = &lsquo;NDC_TEST_FIELD_200_M&rsquo;;</p>
+<p>同步总时间：增量开始时间-全量开始时间</p>
+<p><img alt="image-20210421112751484" src="/Users/wangtao/notes/image-20210421112751484.png" /></p>
+<p>3.整体同步完使用的时间（目前在平台上只找到开始时间，什么时候结束的不清楚，无法估量整体耗时，有没地方可以查看？</p>
+<p>同上</p>
+<p>4.对CPU\IO的消耗  （前面是说这一块只有你们那边能看到）</p>
+<p>方式1:可以登录机器59.111.211.44，查看资源消耗</p>
+<p>方式2:通过网易哨兵平台查看</p>
+<p>比如最近一次测试统计：</p>
+<p>ndc任务链接：http://easydemo-ndc.163yun.com/dist/index.html#/home/job/detail?jobName=oracle2oracle-ndc-test200-m&amp;jobId=4&amp;secondaryName=&amp;projectId=2&amp;hasChildren=false</p>
+<p>同步表名：NDC_TEST_FIELD_200_M</p>
+<p>数据量：200字段，50万记录，2.1G数据</p>
+<p>同步耗时：64s，2021-04-21 13:42:07 到 2021-04-21 13:43:11</p>
+<p>平均速度：7800行/s，33M/s</p>
+<p>cpu统计：</p>
+<p>https://nss.netease.com/sentry/appMonitor/view?itemId=1&amp;itemType=0&amp;instanceId=798971%3Adefault&amp;rangeType=1h&amp;sign=1&amp;clusterId=667181&amp;machRoomId=0</p>
+<p><img alt="image-20210421134817411" src="/Users/wangtao/notes/image-20210421134817411.png" /></p>
+<p>网卡流量：</p>
+<p><img alt="image-20210421134838605" src="/Users/wangtao/notes/image-20210421134838605.png" /></p>
+<p>CREATE TABLE <code>t_pdc_waybill_org</code> (
+<code>ID</code> bigint(20) NOT NULL COMMENT &lsquo;ID&rsquo;, 
+<code>WAYBILL_NO</code> varchar(50) DEFAULT NULL COMMENT &lsquo;运单号&rsquo;,
+<code>CREATE_TIME</code> datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT &lsquo;创建时间&rsquo;, 
+<code>LAST_LOAD_ORG_CODE</code> varchar(100) DEFAULT NULL COMMENT &lsquo;最终配载部门&rsquo;, 
+PRIMARY KEY (<code>CREATE_TIME</code>,<code>ID</code>),KEY <code>index_PDC_WAYBILLORG_01</code> (<code>LAST_LOAD_ORG_CODE</code>,<code>WAYBILL_NO</code>) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8 COMMENT=&rsquo;运单表&rsquo; /<em> BF=LAST_LOAD_ORG_CODE, POLICY=orgcode, STARTID=1000200000, AUTO_INCREMENT_COLUMN=ID, ASSIGNIDTYPE=USB </em>/;</p>
+<p>CREATE TABLE <code>t_pdc_waybill</code> (
+<code>ID</code> bigint(20) NOT NULL COMMENT &lsquo;ID&rsquo;, 
+<code>WAYBILL_NO</code> varchar(50) DEFAULT NULL COMMENT &lsquo;运单号&rsquo;,
+<code>CREATE_TIME</code> datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT &lsquo;创建时间&rsquo;, 
+<code>LAST_LOAD_ORG_CODE</code> varchar(100) DEFAULT NULL COMMENT &lsquo;最终配载部门&rsquo;, 
+PRIMARY KEY (<code>CREATE_TIME</code>,<code>ID</code>),KEY <code>index_PDC_WAYBILLORG_01</code> (<code>LAST_LOAD_ORG_CODE</code>,<code>WAYBILL_NO</code>) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8 COMMENT=&rsquo;运单表&rsquo; /<em> BF=WAYBILL_NO, POLICY=orgcode, STARTID=1000200000, AUTO_INCREMENT_COLUMN=ID, ASSIGNIDTYPE=USB </em>/;</p>
+<pre><code>alter table target_kafka add column  `authMode` varchar(20) NOT NULL default 'EMPTY' after brokerAddr;
+alter table target_kafka add column `authMode` varchar(20) DEFAULT 'EMPTY' after brokerAddr;
+</code></pre>
+<pre><code>alter table target_kafka add column `authMode` varchar(20) DEFAULT 'EMPTY' after brokerAddr;
+alter table target_kafka add column `user` varchar(20) DEFAULT NULL after authMode;
+alter table target_kafka add column `passwd` varchar(256) DEFAULT NULL after user;
+
+alter table subscribe_job add column `authMode` varchar(20) DEFAULT 'EMPTY' after `kafkaZkUseAcl`;
+alter table subscribe_job add column `user` varchar(20) DEFAULT NULL after authMode;
+alter table subscribe_job add column `passwd` varchar(256) DEFAULT NULL after user;
+</code></pre>
+<p>3.0.0/3.1.0/3.1.1升级到3.2.0步骤：</p>
+<p>1.升级center-dashboard系统库（注意从sql 2.4.6开始升级，根据升级之前的版本跳过部分3.0.0/3.1.0/3.1.1的sql）</p>
+<p>2.修改dashboard.xml</p>
+<p>删除rpcProperties和zkConfig</p>
+<p>3.dashboard启动后添加平台管理-环境管理，创建环境</p>
+<p><img alt="image-20210428200209610" src="/Users/wangtao/notes/image-20210428200209610.png" /></p>
+<p>065d9f7e-ebfb-11e9-aa95-246e96a5cbe0:1-27546272,
+1401e493-6a81-11ea-9068-246e969934b0:1-1225360435,
+1e0ab755-52f5-11ea-a2e3-246e96665468:1-76082461,
+48d3e266-ebf5-11e9-b776-246e96a56b38:1-55113796,
+5af45579-6a66-11ea-acb6-246e96993430:1-139490795,
+9a8d57cf-52ea-11ea-b110-246e9681a810:1-200504134,
+cfe0f6f6-6239-11ea-9fb7-246e969ebee8:1-11,
+f5a01387-6a7a-11ea-b12d-246e969948b8:1-7312,
+feef10e3-2e38-11eb-858c-6c92bf63b437:1-689050115</p>
+<p>065d9f7e-ebfb-11e9-aa95-246e96a5cbe0:1-27546272,
+1401e493-6a81-11ea-9068-246e969934b0:1-1225360435,
+1e0ab755-52f5-11ea-a2e3-246e96665468:1-76082461,
+48d3e266-ebf5-11e9-b776-246e96a56b38:1-55113796,
+5af45579-6a66-11ea-acb6-246e96993430:1-139490797,
+9a8d57cf-52ea-11ea-b110-246e9681a810:1-200504134,
+cfe0f6f6-6239-11ea-9fb7-246e969ebee8:1-11,
+f5a01387-6a7a-11ea-b12d-246e969948b8:1-7312,
+feef10e3-2e38-11eb-858c-6c92bf63b437:1-689050115</p>
+<p>PARTITION BY RANGE (&ldquo;CREATE_TIME&rdquo;) INTERVAL (NUMTOYMINTERVAL(1,&rsquo;MONTH&rsquo;)) STORE IN (&ldquo;TBS_ENTRY_1&rdquo;, &ldquo;TBS_ENTRY_2&rdquo;, &ldquo;TBS_ENTRY_3&rdquo;, &ldquo;TBS_ENTRY_4&rdquo;) </p>
+<p>(PARTITION &ldquo;P2014&rdquo; VALUES LESS THAN (TIMESTAMP&rsquo; 2015-01-01 00:00:00&rsquo;) SEGMENT CREATION DEFERRED </p>
+<p>PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 </p>
+<p>NOCOMPRESS LOGGING </p>
+<p>STORAGE(</p>
+<pre><code>SELECT PARTITION_NAME FROM ALL_TAB_PARTITIONS WHERE TABLE_OWNER='ACCOUNTING' AND TABLE_NAME='TB_ENTRY' ORDER BY PARTITION_POSITION
+</code></pre>
+<p>commit c11bdbc7bfd1a50c7b25dacec99cce36ab899ddd (HEAD -&gt; feature-metav2-major-compaction)
+Author: wangtao <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;&#97;&#110;&#103;&#116;&#97;&#111;&#51;&#64;&#99;&#111;&#114;&#112;&#46;&#110;&#101;&#116;&#101;&#97;&#115;&#101;&#46;&#99;&#111;&#109;">&#119;&#97;&#110;&#103;&#116;&#97;&#111;&#51;&#64;&#99;&#111;&#114;&#112;&#46;&#110;&#101;&#116;&#101;&#97;&#115;&#101;&#46;&#99;&#111;&#109;</a>
+Date:   Thu May 20 14:48:35 2021 +0800</p>
+<pre><code>temp only path
+</code></pre>
+<p>CREATE TABLE IF NOT EXISTS <code>test</code>.<code>App</code>(</p>
+<p><code>Id</code> int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT &lsquo;主键&rsquo;,</p>
+<p><code>AppId</code> varchar(500) NOT NULL DEFAULT &lsquo;default&rsquo; COMMENT &lsquo;AppID&rsquo;,</p>
+<p><code>Name</code> varchar(500) NOT NULL DEFAULT &lsquo;default&rsquo; COMMENT &lsquo;应用名&rsquo;,</p>
+<p><code>OrgId</code> varchar(32) NOT NULL DEFAULT &lsquo;default&rsquo; COMMENT &lsquo;部门Id&rsquo;,</p>
+<p><code>OrgName</code> varchar(64) NOT NULL DEFAULT &lsquo;default&rsquo; COMMENT &lsquo;部门名字&rsquo;,</p>
+<p><code>OwnerName</code> varchar(500) NOT NULL DEFAULT &lsquo;default&rsquo; COMMENT &lsquo;ownerName&rsquo;,</p>
+<p><code>OwnerEmail</code> varchar(500) NOT NULL DEFAULT &lsquo;default&rsquo; COMMENT &lsquo;ownerEmail&rsquo;,</p>
+<p><code>IsDeleted</code> bit(1) NOT NULL DEFAULT b&lsquo;0&rsquo; COMMENT &lsquo;1: deleted, 0: normal&rsquo;,</p>
+<p><code>DataChange_CreatedBy</code> varchar(32) NOT NULL DEFAULT &lsquo;default&rsquo; COMMENT &lsquo;创建人邮箱前缀&rsquo;,</p>
+<p><code>DataChange_CreatedTime</code> timestamp NOT NULL DEFAULT current_timestamp() COMMENT &lsquo;创建时间&rsquo;,</p>
+<p><code>DataChange_LastModifiedBy</code> varchar(32) DEFAULT &lsquo;&rsquo; COMMENT &lsquo;最后修改人邮箱前缀&rsquo;,</p>
+<p><code>DataChange_LastTime</code> timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT &lsquo;最后修改时间&rsquo;,</p>
+<p>PRIMARY KEY (<code>Id</code>),</p>
+<p>KEY <code>AppId</code> (<code>AppId</code>(191)),</p>
+<p>KEY <code>DataChange_LastTime</code> (<code>DataChange_LastTime</code>),</p>
+<p>KEY <code>IX_Name</code> (<code>Name</code>(191))</p>
+<p>) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COMMENT=&rsquo;应用表&rsquo;</p>
+<p>流计算平台</p>
+<p>大数据，hive</p>
+<p><img alt="image-20210531193030556" src="/Users/wangtao/notes/image-20210531193030556.png" /></p>
+<p>上周五发现的NDC积压的问题从日志上没有发现异常。从监控看，最早出现积压是24号之前，发生时间比较久了，已经不好排查了，怀疑当时可能发生了线程异常退出的问题</p>
+<p>这样的问题出现的概率是不高的，通过重启NDC任务可以恢复</p>
+<p>NDC报警也会监测这类问题，建议把报警项加上，及时发现问题重启任务</p>
+<p><img alt="image-20210601103233368" src="/Users/wangtao/notes/image-20210601103233368.png" /></p>
+<p>周五到周六NDC写入Arctic一直是正常的，是major-compaction有些问题，导致的数据不可见</p>
+<p>NDC：</p>
+<p>Arctic：</p>
+<p>major-compaction联调跑通，还需要进行更多场景的测试；</p>
+<p>写arctic表</p>
+<p>meta v2 sink 重复 commit</p>
+<h3 id="_1">配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>基本信息</p>
+<p>离线表信息</p>
+<p>实时表信息</p>
+<p>维度表信息</p>
+<p>其他配置</p>
+<h3 id="_2">同步<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>列表信息：</p>
+<p>1.类型（离线表、维度表、实时表）：</p>
+<p>2.数据源类型：</p>
+<p>Kafka</p>
+<p>3.目标类型：</p>
+<p>HBase</p>
+<p>4.状态：</p>
+<p>运行中</p>
+<p>5.延迟：</p>
+<p>30ms</p>
+<p>6.流量：</p>
+<p>4MB/s</p>
+<p>7.操作：</p>
+<p>详情（链接到flink任务）启动 停止 配置</p>
+<h3 id="_3">合并<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>当前正在执行的</p>
+<p>外层列表信息：</p>
+<p>提交时间</p>
+<p>最新可见数据时间点</p>
+<p>状态</p>
+<p>task列表：</p>
+<p>详细信息：</p>
+<p>plan时间</p>
+<p>文件合并完成时间</p>
+<p>提交时间：</p>
+<p>范围：</p>
+<p>最新可见数据时间点：</p>
+<p>arctic任务配置</p>
+<p>yarn 入口：http://sloth-commerce-test2.jd.163.org:8088/</p>
+<p>http://sloth-test0.dg.163.org:3000/grafana/d/rZuGINgWk/sloth?orgId=1&amp;from=now-1h&amp;to=now&amp;var-job_id=d00563f4d7e82bb0ac1cb3f0fa73da4e</p>
+<p>select projectId, count(*) as engineCount, sum(maxMigJobCount) as migMax, sum(migJobRunning) as migRunning, sum(maxMigJobCount) - max(maxMigJobCount) as migSafe, sum(maxSubJobCount) as subMax, sum(subJobRunning) as subRunning, sum(maxSubJobCount) -max(maxSubJobCount) as subSafe  from engine where engineType != &lsquo;Unavailable&rsquo; group by projectId;</p>
+<p>select projectId,engineCount as &lsquo;机器数量&rsquo;,migMax as &lsquo;同步最大值&rsquo;,migRunning as &lsquo;同步运行中&rsquo;,migSafe as &lsquo;同步安全值&rsquo;,subMax as &lsquo;订阅最大值&rsquo;,subRunning as &lsquo;订阅运行中&rsquo;,subSafe as &lsquo;订阅安全值&rsquo;, migSafe-migRunning as &lsquo;同步余量&rsquo;, subSafe-subRunning as &lsquo;订阅余量&rsquo; from (select projectId, count(*) as engineCount, sum(maxMigJobCount) as migMax, sum(migJobRunning) as migRunning, sum(maxMigJobCount) - max(maxMigJobCount) as migSafe, sum(maxSubJobCount) as subMax, sum(subJobRunning) as subRunning, sum(maxSubJobCount) -max(maxSubJobCount) as subSafe  from engine where engineType != &lsquo;Unavailable&rsquo; group by projectId) test;</p>
+<pre><code class="language-sql">select jobId, max(maxDelayTime) as maxDelayTime, sum(maxLeftRelayLogByte) as maxLeftRelayLogByte,
+      sum(maxMigRate) as maxMigRate from(
+          select jobId, secondaryName, max(maxDelayTime) as maxDelayTime, max(maxLeftRelayLogByte) as maxLeftRelayLogByte,
+      max(maxMigRate) as maxMigRate, min(createTime) as createTime, floor(UNIX_TIMESTAMP(createTime) / (60 * 1) ) as aggregateTime from mig_runtime_stat where jobId = 14901 and createTime &gt;= &quot;2021-06-18 11:01:30&quot; and createTime &lt; &quot;2021-06-18 11:31:30&quot;
+      and  case when 0 &lt;&gt; '' then secondaryName = 0 else 1 = 1 end group by aggregateTime, secondaryName order by aggregateTime asc ) as tmp group by aggregateTime;
+</code></pre>
+<p>问题：</p>
+<p>center是否在改造范畴</p>
+<p>任务定义</p>
+<p>全量 </p>
+<p>一拉多推</p>
+<p>监控</p>
+<p>DDL适配</p>
+<p>canal</p>
+<p>细节问题很多，timestamp转化</p>
+<p>jar:file:/home/arctic/sloth-commerce-test/sloth-arctic-server-test/arctic-server-metav2/approot/arctic-server-2.0-SNAPSHOT.jar!/BOOT-INF/lib/hive-common-2.1.1.jar!/</p>
+<p><img alt="image-20210622160129833" src="/Users/wangtao/notes/image-20210622160129833.png" /></p>
+<p><img alt="image-20210622192849495" src="/Users/wangtao/notes/image-20210622192849495.png" /></p>
+<p><img alt="image-20210622193126011" src="/Users/wangtao/notes/image-20210622193126011.png" /></p>
+<p>创建hive已经是arctic表</p>
+<p>创建流程，scan hive表是否会造成内存溢出</p>
+<p>CREATE TABLE <code>test_arctic_basic_wt3_105</code>(
+  <code>id</code> bigint, 
+  <code>name</code> string, 
+  <code>create_time</code> timestamp, 
+  <code>score</code> decimal(10,2), 
+  <code>age</code> int,
+  primary key (<code>id</code>) disable novalidate)
+PARTITIONED BY ( 
+  <code>opt_mon</code> string, 
+  <code>opt_day</code> string)
+stored as parquet;</p>
+<p>CREATE TABLE <code>test_arctic_basic_dev_004</code>(
+  <code>id</code> bigint, 
+  <code>name</code> string, 
+  <code>create_time</code> timestamp, 
+  <code>score</code> decimal(10,2), 
+  <code>age</code> int,
+  primary key (<code>id</code>) disable novalidate)
+PARTITIONED BY ( 
+  <code>opt_mon</code> string, 
+  <code>opt_day</code> string)
+stored as parquet;</p>
+<p>1.了解技术栈</p>
+<p>2.组织架构介绍</p>
+<p>3.业务背景：TOB
+公共技术 商业化</p>
+<p>微服务改造</p>
+<p>适配元数据中心</p>
+<p>insert into major_compact_history values (111111113,653,&rdquo;arcticTest&rdquo;,&rdquo;default&rdquo;,&rdquo;test_arctic_basic_wt3_102&rdquo;,&rdquo;Partition&rdquo;,now(),now(),now(),0,1,2,3,4,5,6,7,8,9,10,223,1,2,3,4,5,6,7,8,9,10,11,12);</p>
+<p>372828196008080424</p>
+<p>队列上加一些监控参数</p>
+<p>1.tablemeta 不用传 done</p>
+<p>2.json oom的问题 xxxx</p>
+<p>3.内存泄漏的问题 xxxx</p>
+<p>4.删除失败</p>
+<p>5.数据量为空的问题 done</p>
+<p>6.snapshotId不相等的问题 </p>
+<p>7.进程多kerberos认证</p>
+<p>8.不能删除compact task的问题 done</p>
+<p>9.数据地图match问题 done</p>
+<p>10.文档框架</p>
+<p>11.文档</p>
+<p>12.监控compactQueue</p>
+<p>Request URL: http://dm-test.bdms.netease.com/detail?tableName=sbtest_expire&amp;catalogName=bdmstest-hive-catalog&amp;databaseName=ndc_test_db&amp;accountId=148&amp;clusterId=bdms-test</p>
+<p>http://dm-test.bdms.netease.com/detail?tableName=all_field_type&amp;catalogName=bdmstest-hive-catalog&amp;databaseName=sloth&amp;accountId=148&amp;clusterId=bdms-test&amp;lm=graph</p>
+<p>update table_runtime set  catalog_name = &lsquo;bdmstest-hive-catalog&rsquo;;
+update major_compact_history set  catalog_name = &lsquo;bdmstest-hive-catalog&rsquo;;
+update table_metadata set  catalog_name = &lsquo;bdmstest-hive-catalog&rsquo;;</p>
+<p>delete from major_compact_tasks;
+delete from major_compact_task_runtimes;
+delete from internal_table_files;</p>
+<p>update hive_clusters set hive_catalog = &lsquo;bdmstest-hive-catalog&rsquo;,cluster_id=&rsquo;bdms-test&rsquo;;</p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

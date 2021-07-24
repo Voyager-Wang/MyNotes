@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="记录工作和学习文档">
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+
+    
+    <title>性能分析功能 - 我的笔记</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../..">我的笔记</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../keymap/">快捷方式</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">文章 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">大数据</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../%E6%96%87%E7%AB%A0/%E5%A4%A7%E6%95%B0%E6%8D%AE/alluxio/">Alluxio</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../%E6%96%87%E7%AB%A0/%E5%A4%A7%E6%95%B0%E6%8D%AE/hudi/">Hudi</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../%E6%96%87%E7%AB%A0/%E5%A4%A7%E6%95%B0%E6%8D%AE/spark-streaming/">Spark</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../%E6%96%87%E7%AB%A0/%E5%A4%A7%E6%95%B0%E6%8D%AE/yarn/">Yarn</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">数据库</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../%E6%96%87%E7%AB%A0/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/Canal%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">Canal</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../%E6%96%87%E7%AB%A0/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/LogMiner/">LogMinor</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">MySQL</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../%E6%96%87%E7%AB%A0/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/MySQL%20GTID%20set%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/">GTID</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">日记</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../%E6%96%87%E7%AB%A0/%E6%97%A5%E8%AE%B0/A-Voyager_%E8%B5%B7%E8%88%AA/">起航</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../%E6%96%87%E7%AB%A0/%E6%97%A5%E8%AE%B0/Diary-%E8%88%AA%E8%A1%8C%E6%97%A5%E5%BF%97/">航行日志</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../%E6%96%87%E7%AB%A0/%E6%97%A5%E8%AE%B0/Engine-1_%E5%86%A5%E6%83%B3%E4%BD%93%E6%82%9F/">Engine1-冥想</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../%E6%96%87%E7%AB%A0/%E6%97%A5%E8%AE%B0/Engine-3_%E5%B1%80%E5%A4%96%E4%BA%BA/">Engine3-局外人</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">java <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../%E6%96%87%E7%AB%A0/java%E6%8A%80%E6%9C%AF/idea/">IDEA</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../ToDo/">ToDo</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="https://github.com/arcticXXX">GitHub</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#_1">性能分析功能</a></li>
+            <li class="second-level"><a href="#_2">产品形态</a></li>
+                
+                <li class="third-level"><a href="#1">1.功能入口</a></li>
+                <li class="third-level"><a href="#2">2.任务性能分析弹窗</a></li>
+            <li class="second-level"><a href="#_3">监控参数</a></li>
+                
+                <li class="third-level"><a href="#puller">Puller监控参数</a></li>
+                <li class="third-level"><a href="#_4">任务监控参数</a></li>
+            <li class="second-level"><a href="#_5">场景分析</a></li>
+                
+                <li class="third-level"><a href="#1puller">1.puller</a></li>
+                <li class="third-level"><a href="#2_1">2.全量</a></li>
+                <li class="third-level"><a href="#3">3.增量</a></li>
+                <li class="third-level"><a href="#4">4.订阅</a></li>
+            <li class="second-level"><a href="#_6">接口说明</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="_1">性能分析功能<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">产品形态<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1">1.功能入口<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>功能入口在子任务（puller）运行信息的每个状态栏标题内，前端”运行信息“的“全量同步”“增量同步”“增量推送”标签栏（puller的“基本信息”）中会增加”性能分析“链接，点击“性能分析”连接，弹出“性能分析”弹窗。</p>
+<p>支持的范围：同步任务、订阅任务、双向同步任务、拉取进程，暂不支持校验任务</p>
+<h3 id="2">2.任务性能分析弹窗<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>任务“性能分析”弹窗包含的内容：</p>
+<ul>
+<li>标题：性能分析</li>
+<li>类型：全量同步/增量同步/增量推送</li>
+<li>状态：执行中（预计xx分xx秒后自动结束）/停止</li>
+<li>操作：按钮”启动/终止“，下拉框”运行时长“</li>
+<li>缓存：使用率 %，展开</li>
+<li>拉取：瞬时速度 行/s，展开</li>
+<li>转化：瞬时速度 行/s，展开</li>
+<li>插入：瞬时速度 行/s，展开</li>
+</ul>
+<p><img alt="image-20210114195817228" src="https://tinkerer-pic.oss-cn-hangzhou.aliyuncs.com/picgo/image-20210114195817228.png" /></p>
+<p><img alt="image-20210114195843008" src="https://tinkerer-pic.oss-cn-hangzhou.aliyuncs.com/picgo/image-20210114195843008.png" /></p>
+<p><img alt="image-20210114195924834" src="https://tinkerer-pic.oss-cn-hangzhou.aliyuncs.com/picgo/image-20210114195924834.png" /></p>
+<p>puller“性能分析”弹窗包含的内容：</p>
+<ul>
+<li>标题：性能分析</li>
+<li>状态：执行中（预计xx分xx秒后自动结束）/停止</li>
+<li>操作：按钮”启动/终止“，下拉框”运行时长“</li>
+<li>网络占比 %：</li>
+<li>磁盘占比 %：</li>
+</ul>
+<p><img alt="image-20210114195952486" src="https://tinkerer-pic.oss-cn-hangzhou.aliyuncs.com/picgo/image-20210114195952486.png" /></p>
+<p>说明</p>
+<ul>
+<li>弹窗内容自动刷新：处于执行中状态时，每隔5秒自动刷新一次数据；倒计时到0秒时，额外触发一次刷新；停止状态不再刷新；点击启动后刷新；</li>
+<li>启动操作：如果性能分析处于“停止”状态，可以点击“启动”按钮，下拉框“运行时长”可见可编辑，默认值“十分钟”，可选值“十分钟”、”半小时“、”一小时“；</li>
+<li>终止操作：如果性能分析处于“执行中”状态，可以点击“终止”按钮，此时下拉框“运行时长”不可见。</li>
+<li>拉取、转化、插入、缓存根据后端返回决定是否显示，如果返回null，则不显示（或者直接置灰，不可点击）。</li>
+<li>拉取、转化、插入、缓存点击后都可以展开，显示详细的参数，具体见下列”监控参数“</li>
+</ul>
+<h2 id="_3">监控参数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>性能相关的运行参数包含三种：</p>
+<ul>
+<li>配置参数：任务隐含的一些配置，不会随时间变化</li>
+<li>瞬时参数：可以在某一确定时刻获取的参数，如活跃线程数</li>
+<li>统计参数：需要在一段时间里统计得到的参数（默认20s），比如速度</li>
+</ul>
+<h3 id="puller">Puller监控参数<a class="headerlink" href="#puller" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">// 网络占比：等待MySQL发送binlog的时间所占百分比
+private float waitingBinlogRatio;
+// 磁盘占比：等待写relayLog的时间所占百分比
+private float waitingWriteRelayLogRatio;
+</code></pre>
+<h3 id="_4">任务监控参数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>细分类别</th>
+<th>层级</th>
+<th>参数（单位）</th>
+<th>常态化</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全量同步</td>
+<td>整体</td>
+<td>最外层（运行信息）</td>
+<td>同步速度（行/s）</td>
+<td>是</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td>整体</td>
+<td>最外层（运行信息）</td>
+<td>解决冲突数据（行/s）</td>
+<td>是</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td>整体</td>
+<td>表级别（列表）</td>
+<td>冲突数据（行）</td>
+<td>是</td>
+<td>瞬时值</td>
+</tr>
+<tr>
+<td></td>
+<td>拉取</td>
+<td>性能分析层</td>
+<td>瞬时速度（行/s）</td>
+<td>是</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- 展开</td>
+<td>select平均耗时（ns）</td>
+<td>是</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- 展开</td>
+<td>活跃线程数</td>
+<td>是</td>
+<td>瞬时值</td>
+</tr>
+<tr>
+<td></td>
+<td>插入</td>
+<td>性能分析层</td>
+<td>瞬时速度（行/s）</td>
+<td>是</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- 展开</td>
+<td>平均执行耗时（ns）</td>
+<td>是</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- 展开</td>
+<td>活跃线程数</td>
+<td>是</td>
+<td>瞬时值</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- 展开</td>
+<td>批量数</td>
+<td>是</td>
+<td>固定配置值</td>
+</tr>
+<tr>
+<td></td>
+<td>缓存</td>
+<td>性能分析层</td>
+<td>缓存使用量（%）</td>
+<td>是</td>
+<td>瞬时值</td>
+</tr>
+<tr>
+<td>增量同步</td>
+<td>整体</td>
+<td>最外层（运行信息）</td>
+<td>同步速度（行/s）</td>
+<td>是</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td>整体</td>
+<td>最外层（运行信息）</td>
+<td>延迟（ms）</td>
+<td>是</td>
+<td>瞬时值</td>
+</tr>
+<tr>
+<td></td>
+<td>整体</td>
+<td>最外层（运行信息）</td>
+<td>积压（B）</td>
+<td>是</td>
+<td>瞬时值</td>
+</tr>
+<tr>
+<td></td>
+<td>整体</td>
+<td>最外层（运行信息）</td>
+<td>解决冲突数据（行/s）</td>
+<td>是</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td>拉取</td>
+<td>性能分析层</td>
+<td>瞬时速度（行/s）</td>
+<td>-</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- 展开</td>
+<td>解析速度（行/s）</td>
+<td>-</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td>转化</td>
+<td>性能分析层</td>
+<td>瞬时速度（行/s）</td>
+<td>-</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td>插入</td>
+<td>性能分析层</td>
+<td>瞬时速度（行/s）</td>
+<td>-</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- 展开</td>
+<td>平均执行耗时（ns）</td>
+<td>-</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- 展开</td>
+<td>活跃线程数</td>
+<td>是</td>
+<td>瞬时值</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- 展开</td>
+<td>批量数</td>
+<td>-</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td>缓存</td>
+<td>性能分析层</td>
+<td>缓存使用量（%）</td>
+<td>是</td>
+<td>瞬时值</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- 展开</td>
+<td>缓存容量</td>
+<td>是</td>
+<td>瞬时值</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- 展开</td>
+<td>最长队列大小</td>
+<td>是</td>
+<td>瞬时值</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- 展开</td>
+<td>最长队列索引值</td>
+<td>是</td>
+<td>瞬时值</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- 展开</td>
+<td>可执行队列大小</td>
+<td>是</td>
+<td>瞬时值</td>
+</tr>
+<tr>
+<td>订阅推送</td>
+<td>整体</td>
+<td>最外层（运行信息）</td>
+<td>推送速度 行/s</td>
+<td>是</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td>整体</td>
+<td>最外层（运行信息）</td>
+<td>延迟（ms）</td>
+<td>是</td>
+<td>瞬时值</td>
+</tr>
+<tr>
+<td></td>
+<td>整体</td>
+<td>最外层（运行信息）</td>
+<td>积压（B）</td>
+<td>是</td>
+<td>瞬时值</td>
+</tr>
+<tr>
+<td></td>
+<td>拉取</td>
+<td>性能分析层</td>
+<td>瞬时速度（行/s）</td>
+<td>-</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- 展开</td>
+<td>解析速度（行/s）</td>
+<td>-</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td>转化</td>
+<td>性能分析层</td>
+<td>瞬时速度（行/s）</td>
+<td>-</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td>推送</td>
+<td>性能分析层</td>
+<td>瞬时速度（行/s）</td>
+<td>-</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- 展开</td>
+<td>平均执行耗时（ns）</td>
+<td>-</td>
+<td>统计参数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- 展开</td>
+<td>批量数</td>
+<td>-</td>
+<td>统计参数</td>
+</tr>
+</tbody>
+</table>
+<p>会保证同步速度、瞬时速度、解析速度之间具有可比性</p>
+<h2 id="_5">场景分析<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1puller">1.puller<a class="headerlink" href="#1puller" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>延迟</th>
+<th>日志积压大小</th>
+<th>源端binlog生成速度</th>
+<th>binlog dump速度</th>
+<th>已缓存的relayLog大小</th>
+<th>网络占比</th>
+<th>磁盘占比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MySQL主从延迟</td>
+<td>高</td>
+<td>低</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>MySQL节点或者Puller节点网卡打爆了</td>
+<td>高</td>
+<td>高</td>
+<td>可能高</td>
+<td>低</td>
+<td>-</td>
+<td>高</td>
+<td>低</td>
+</tr>
+<tr>
+<td>Puller节点磁盘IO满了</td>
+<td>高</td>
+<td>高</td>
+<td>可能高</td>
+<td>低</td>
+<td>-</td>
+<td>低</td>
+<td>高</td>
+</tr>
+<tr>
+<td>Puller节点接收binlog存储磁盘达到了瓶颈</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>高</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Pusher节点消费成为瓶颈，Puller日志缓存达到上限</td>
+<td>低</td>
+<td>低</td>
+<td>-</td>
+<td>-</td>
+<td>高，结合任务状态定位</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>正常，正在追积压数据</td>
+<td>高</td>
+<td>高</td>
+<td>正常</td>
+<td>高</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>正常，源端没有binlog生成</td>
+<td>低</td>
+<td>低</td>
+<td>低</td>
+<td>低</td>
+<td>正常</td>
+<td>高</td>
+<td>低</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_1">2.全量<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>整体</th>
+<th></th>
+<th>拉取</th>
+<th></th>
+<th></th>
+<th>缓存</th>
+<th>插入</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>场景</strong></td>
+<td>同步速度</td>
+<td>解决冲突数据</td>
+<td>瞬时速度</td>
+<td>sql平均耗时</td>
+<td>活跃线程数</td>
+<td>缓存使用量</td>
+<td>瞬时速度</td>
+<td>sql平均耗时</td>
+<td>活跃线程数</td>
+</tr>
+<tr>
+<td>慢查询导致同步慢</td>
+<td>低</td>
+<td>极少</td>
+<td>低</td>
+<td><strong>极长</strong></td>
+<td>正常</td>
+<td><strong>低</strong></td>
+<td>高/正常</td>
+<td>短/正常</td>
+<td>正常</td>
+</tr>
+<tr>
+<td>拉取并发太低导致同步慢</td>
+<td>低</td>
+<td>极少</td>
+<td>低</td>
+<td><strong>长/正常</strong></td>
+<td><strong>低</strong></td>
+<td><strong>低</strong></td>
+<td>高/正常</td>
+<td>短/正常</td>
+<td>正常</td>
+</tr>
+<tr>
+<td>写入并发太低导致同步慢</td>
+<td>低</td>
+<td>极少</td>
+<td>高/正常</td>
+<td>短/正常</td>
+<td>正常</td>
+<td><strong>高</strong></td>
+<td>低</td>
+<td>正常</td>
+<td><strong>低</strong></td>
+</tr>
+<tr>
+<td>写入网络延迟高导致同步慢</td>
+<td>低</td>
+<td>极少</td>
+<td>高/正常</td>
+<td>短/正常</td>
+<td>正常</td>
+<td><strong>高</strong></td>
+<td>低</td>
+<td><strong>长，但和网络延迟同一量级</strong></td>
+<td>正常</td>
+</tr>
+<tr>
+<td>目标端到达写入瓶颈[注1]</td>
+<td>低</td>
+<td>极少</td>
+<td>高/正常</td>
+<td>短/正常</td>
+<td>正常</td>
+<td><strong>高</strong></td>
+<td>低</td>
+<td><strong>长，显著高于网络延迟</strong></td>
+<td><strong>高</strong></td>
+</tr>
+<tr>
+<td>大量解决冲突造成同步慢</td>
+<td>低</td>
+<td><strong>和同步速度相仿</strong></td>
+<td>高/正常</td>
+<td>短/正常</td>
+<td>正常</td>
+<td><strong>高</strong></td>
+<td>低</td>
+<td>短/正常</td>
+<td>正常</td>
+</tr>
+</tbody>
+</table>
+<p>[注1]：区分目标端到达写入瓶颈和网络通信延迟的场景：</p>
+<p>提高写入并发后（活跃线程数）：</p>
+<p>如果目标端到达瓶颈，则插入瞬时速度基本不变，sql平均耗时增大；</p>
+<p>如果网络通信延迟，则插入速度增大，sql平均耗时基本不变（和通信延迟在同一量级）；</p>
+<h3 id="3">3.增量<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>整体</th>
+<th></th>
+<th></th>
+<th>拉取</th>
+<th></th>
+<th>缓存</th>
+<th></th>
+<th></th>
+<th>插入</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>场景</strong></td>
+<td>同步速度</td>
+<td>延迟</td>
+<td>积压</td>
+<td>瞬时速度</td>
+<td>解析速度</td>
+<td>缓存使用量</td>
+<td>最长队列</td>
+<td>可执行队列</td>
+<td>瞬时速度</td>
+<td>sql平均耗时</td>
+<td>活跃线程数</td>
+</tr>
+<tr>
+<td>解析成为瓶颈</td>
+<td>低</td>
+<td>高</td>
+<td>高</td>
+<td>低</td>
+<td><strong>低</strong></td>
+<td><strong>低</strong></td>
+<td>低</td>
+<td>低</td>
+<td>高</td>
+<td>短</td>
+<td>正常</td>
+</tr>
+<tr>
+<td>transfer有异常耗时操作</td>
+<td>低</td>
+<td>高</td>
+<td>高</td>
+<td><strong>高</strong></td>
+<td>高</td>
+<td>低</td>
+<td>低</td>
+<td>低</td>
+<td><strong>高</strong></td>
+<td>短</td>
+<td>正常</td>
+</tr>
+<tr>
+<td>插入sql执行慢成为瓶颈</td>
+<td>低</td>
+<td>高</td>
+<td>高</td>
+<td>高</td>
+<td>高</td>
+<td><strong>高</strong></td>
+<td>低</td>
+<td><strong>高</strong></td>
+<td>低</td>
+<td><strong>长</strong></td>
+<td>正常</td>
+</tr>
+<tr>
+<td>插入并发不够</td>
+<td>低</td>
+<td>高</td>
+<td>高</td>
+<td>高</td>
+<td>高</td>
+<td><strong>高</strong></td>
+<td>低</td>
+<td><strong>高</strong></td>
+<td>低</td>
+<td>短</td>
+<td><strong>低</strong></td>
+</tr>
+<tr>
+<td>单行数据频繁更新</td>
+<td>低</td>
+<td>高</td>
+<td>高</td>
+<td>高</td>
+<td>高</td>
+<td>高</td>
+<td><strong>高</strong></td>
+<td><strong>低</strong></td>
+<td>高</td>
+<td>短</td>
+<td>低</td>
+</tr>
+<tr>
+<td>拉取binlog网络成为瓶颈，有binlog积压</td>
+<td>低</td>
+<td>高</td>
+<td>高</td>
+<td><strong>低</strong></td>
+<td><strong>高</strong></td>
+<td><strong>低</strong></td>
+<td>低</td>
+<td>低</td>
+<td>高</td>
+<td>短</td>
+<td>低</td>
+</tr>
+<tr>
+<td>主从复制存在延迟</td>
+<td>正常</td>
+<td>高</td>
+<td><strong>低</strong></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>正常：源端binlog积压，解析快</td>
+<td>高</td>
+<td>低</td>
+<td>低</td>
+<td>高</td>
+<td>高</td>
+<td>高</td>
+<td>低</td>
+<td>高</td>
+<td>高</td>
+<td>短</td>
+<td>正常</td>
+</tr>
+<tr>
+<td>正常：源端产生少量增量数据，无binlog积压</td>
+<td>低</td>
+<td>低</td>
+<td>低</td>
+<td>低</td>
+<td>高</td>
+<td>低</td>
+<td>低</td>
+<td>低</td>
+<td>高</td>
+<td>短</td>
+<td>低</td>
+</tr>
+<tr>
+<td>正常：大量数据被过滤掉</td>
+<td>低</td>
+<td>低</td>
+<td>低</td>
+<td>高</td>
+<td>高</td>
+<td>低</td>
+<td>低</td>
+<td>低</td>
+<td>高</td>
+<td>短</td>
+<td>低</td>
+</tr>
+</tbody>
+</table>
+<p>补充：</p>
+<p>大量解决冲突引起同步变慢的指标：解决冲突数据的速度和同步速度相当</p>
+<h3 id="4">4.订阅<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>整体</th>
+<th></th>
+<th></th>
+<th>拉取</th>
+<th></th>
+<th>推送</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>场景</strong></td>
+<td>推送速度</td>
+<td>延迟</td>
+<td>积压</td>
+<td>瞬时速度</td>
+<td>解析速度</td>
+<td>瞬时速度</td>
+<td>消息推送平均耗时</td>
+</tr>
+<tr>
+<td>解析速度成为瓶颈</td>
+<td>低</td>
+<td>高</td>
+<td>高</td>
+<td>低</td>
+<td><strong>低</strong></td>
+<td>高</td>
+<td>短</td>
+</tr>
+<tr>
+<td>transfer有异常耗时操作</td>
+<td>低</td>
+<td>高</td>
+<td>高</td>
+<td><strong>高</strong></td>
+<td>高</td>
+<td><strong>高</strong></td>
+<td>短</td>
+</tr>
+<tr>
+<td>推送成为瓶颈</td>
+<td>低</td>
+<td>高</td>
+<td>高</td>
+<td><strong>高</strong></td>
+<td>高</td>
+<td><strong>低</strong></td>
+<td>长</td>
+</tr>
+<tr>
+<td>拉取binlog网络成为瓶颈，有binlog积压</td>
+<td>低</td>
+<td>高</td>
+<td>高</td>
+<td><strong>低</strong></td>
+<td><strong>高</strong></td>
+<td>高</td>
+<td>短</td>
+</tr>
+<tr>
+<td>主从复制存在延迟</td>
+<td>正常</td>
+<td>低</td>
+<td>高</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_6">接口说明<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>启动终止性能分析</li>
+</ul>
+<p>新加接口实现，不走任务修改接口（修改对任务的影响比较重，会重新预检查、重新拉取binlog等，流程较长不能迅速生效），为了后续扩展新功能，engine和子进程的接口带properties。</p>
+<p>支持启动后一段时间自动停止。</p>
+<p>默认不会开启，可以在任务（puller）运行中开启，新建的任务、puller，性能分析默认处于关闭状态；</p>
+<p>启动性能分析，任务（puller）停止再启动后，还会处在开启性能分析的状态；</p>
+<ul>
+<li>性能分析实时结果的获取</li>
+</ul>
+<p>单独的接口实现</p>
+<p>https://nei.hz.netease.com/project?pid=40088 性能分析分组</p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
