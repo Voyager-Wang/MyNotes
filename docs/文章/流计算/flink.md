@@ -1,6 +1,6 @@
 ## Module
 
-<img src="/Users/wangtao/notes/文章/image-20200929115413536.png" alt="image-20200929115413536" style="zoom:50%;" />
+<img src="/Users/wangtao/notes/docs/文章/image-20200929115413536.png" alt="image-20200929115413536" style="zoom:50%;" />
 
 
 
@@ -10,7 +10,7 @@
 
 当执行一个任务时，启动了哪些组件？这些组件的作用是什么
 
-![image-20200927162212055](/Users/wangtao/notes/文章/image-20200927162212055.png)
+![image-20200927162212055](/Users/wangtao/notes/docs/文章/image-20200927162212055.png)
 
 
 
@@ -84,7 +84,7 @@ Savepoints are **triggered by the user** and **don’t automatically expire**
 
 checkpoint生成机制概览
 
-<img src="/Users/wangtao/notes/文章/image-20201014142102064.png" alt="image-20201014142102064" style="zoom:50%;" />
+<img src="/Users/wangtao/notes/docs/文章/image-20201014142102064.png" alt="image-20201014142102064" style="zoom:50%;" />
 
 保存快照是异步的
 
@@ -100,13 +100,13 @@ checkpoint需要手动设置：
 
 Barrier是一个特殊的消息，触发所有Operator保存snapshot的标识消息，和其他消息一起按照顺序流经整个系统，由JobManager触发各个source生成。
 
-<img src="/Users/wangtao/notes/文章/image-20200929104440302.png" alt="image-20200929104440302" style="zoom:50%;" />
+<img src="/Users/wangtao/notes/docs/文章/image-20200929104440302.png" alt="image-20200929104440302" style="zoom:50%;" />
 
 
 
 #### Operator生成快照的方式之一：Aligned checkpoints
 
-![image-20200929113822288](/Users/wangtao/notes/文章/image-20200929113822288.png)
+![image-20200929113822288](/Users/wangtao/notes/docs/文章/image-20200929113822288.png)
 
 
 
@@ -120,7 +120,7 @@ Operators snapshot their state at the point in time when they have received all 
 
 也可以关闭上述阻塞机制，但是保存snapshot的时机是一样的，这时提供的是At-least-once保证，带来的好处更低的延迟。
 
-![image-20201014141630078](/Users/wangtao/notes/文章/image-20201014141630078.png)
+![image-20201014141630078](/Users/wangtao/notes/docs/文章/image-20201014141630078.png)
 
 图中Checkpoint data保存在：
 
@@ -130,7 +130,7 @@ in the JobManager’s memory (or, in high-availability mode, in the metadata che
 
 #### Operator生成快照的方式之二：Unaligned checkpoints（Flink 1.11引入）
 
-![image-20201014153141208](/Users/wangtao/notes/文章/image-20201014153141208.png)
+![image-20201014153141208](/Users/wangtao/notes/docs/文章/image-20201014153141208.png)
 
 #### Recovery（恢复）
 
@@ -169,7 +169,7 @@ To achieve exactly once end-to-end, so that every event from the sources affects
 
 （commit失败如何处理？）
 
-![image-20201014143636996](/Users/wangtao/notes/文章/image-20201014143636996.png)
+![image-20201014143636996](/Users/wangtao/notes/docs/文章/image-20201014143636996.png)
 
-![image-20201014144157771](/Users/wangtao/notes/文章/image-20201014144157771.png)
+![image-20201014144157771](/Users/wangtao/notes/docs/文章/image-20201014144157771.png)
 
