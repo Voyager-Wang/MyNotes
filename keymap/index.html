@@ -208,7 +208,7 @@
                 
                 
                     <li >
-                        <a href="https://github.com/arcticXXX">GitHub</a>
+                        <a href="https://github.com/Voyager-Wang/MyNotes">GitHub</a>
                     </li>
                 
                 
@@ -236,19 +236,47 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="first-level active"><a href="#vim">Vim</a></li>
-            <li class="second-level"><a href="#_1">删除</a></li>
+            <li class="second-level"><a href="#_1">翻页</a></li>
+                
+            <li class="second-level"><a href="#_2">光标移动</a></li>
+                
+            <li class="second-level"><a href="#_3">删除字符</a></li>
+                
+            <li class="second-level"><a href="#_4">剪切</a></li>
+                
+            <li class="second-level"><a href="#_5">复制</a></li>
+                
+            <li class="second-level"><a href="#_6">粘贴</a></li>
+                
+            <li class="second-level"><a href="#_7">重复</a></li>
+                
+            <li class="second-level"><a href="#_8">撤销</a></li>
+                
+            <li class="second-level"><a href="#_9">合并</a></li>
+                
+            <li class="second-level"><a href="#_10">替换</a></li>
+                
+            <li class="second-level"><a href="#_11">显示行号</a></li>
+                
+            <li class="second-level"><a href="#_12">列选</a></li>
+                
+            <li class="second-level"><a href="#_13">保存退出</a></li>
+                
+            <li class="second-level"><a href="#_14">多文件编辑</a></li>
+                
+            <li class="second-level"><a href="#_15">多窗口编辑</a></li>
                 
         <li class="first-level "><a href="#idea">Idea</a></li>
         <li class="first-level "><a href="#typora">Typora</a></li>
-            <li class="second-level"><a href="#_2">格式</a></li>
+            <li class="second-level"><a href="#_16">格式</a></li>
                 
-            <li class="second-level"><a href="#_3">移动</a></li>
+            <li class="second-level"><a href="#_17">移动</a></li>
                 
-            <li class="second-level"><a href="#_4">选择</a></li>
+            <li class="second-level"><a href="#_18">选择</a></li>
                 
-            <li class="second-level"><a href="#_5">操作</a></li>
+            <li class="second-level"><a href="#_19">操作</a></li>
                 
-            <li class="second-level"><a href="#_6">表格</a></li>
+            <li class="second-level"><a href="#_20">表格</a></li>
                 
         <li class="first-level "><a href="#iterm2">iTerm2</a></li>
         <li class="first-level "><a href="#less">less</a></li>
@@ -260,30 +288,91 @@
         <div class="col-md-9" role="main">
 
 <h2 id="vim">Vim<a class="headerlink" href="#vim" title="Permanent link">&para;</a></h2>
-<h3 id="_1">删除<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>删除多行</p>
-<p>dd 删除本行</p>
-<p>d3j 删除本行+下面的三行</p>
-<p>d3k 删除本行+上面的三行</p>
+<h3 id="_1">翻页<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>ctrl+f 向下翻页（常用）</p>
+<p>ctrl+b 向上翻页（常用）</p>
+<p>ctrl+d 向下翻半页</p>
+<p>ctrl+u 向上翻半页</p>
+<h3 id="_2">光标移动<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>hjkl 方向键【head jump kick last】（常用）</p>
+<p>[space] 向后移动一个字符，自动跳转到下一行（常用）</p>
+<p>[enter] 向后移动一行（到行首）（常用）</p>
+<p>0 移动到行首（常用）</p>
+<p>$ 移动到行尾（常用）</p>
+<p>G 移动到文档最后一行（常用）</p>
+<p>gg 移动到文档第一行（常用）或1G，等效</p>
+<p>n[hjkl] 移动n个位置</p>
+<p>n[enter] 向后移动n行</p>
+<p>n[space] 向后移动n个字符</p>
+<h3 id="_3">删除字符<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>x 删除1个字符</p>
+<p>20x 向后删除20个字符</p>
+<h3 id="_4">剪切<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>dd 剪切本行（常用）</p>
+<p>d0 剪切到行首的字符</p>
+<p>d$ 剪切到队尾的字符</p>
+<p>20dd 向下剪切20行</p>
+<p>dgg 剪切第一行到本行</p>
+<p>di&rdquo; 删除引号内的内容，同理di(删除括号内内容，di{,di},di)等</p>
+<p>dG 剪切本行到最后一行</p>
+<p>cc 剪切本行并进入编辑模式</p>
+<h3 id="_5">复制<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>yy 复制本行（常用）</p>
+<p>y0 复制到行首的字符</p>
+<p>y$ 复制到队尾的字符</p>
+<p>20yy 向下复制20行</p>
+<p>ygg 复制第一行到本行</p>
+<p>yG 复制本行到最后一行</p>
+<h3 id="_6">粘贴<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>p 向下粘贴（可以多次粘贴）</p>
+<p>P 向上粘贴（可以多次粘贴）</p>
+<h3 id="_7">重复<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>. 重做上一个指令</p>
+<h3 id="_8">撤销<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>u 撤销</p>
+<p>ctrl+r 重做</p>
+<h3 id="_9">合并<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>J 合并本行和下一行（补充空格）</p>
+<h3 id="_10">替换<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>:1,$s/word1/word2/gc 全文查找和替换word1为word2</p>
+<h3 id="_11">显示行号<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>:set nu</p>
+<p>:set nonu</p>
+<h3 id="_12">列选<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>ctrl+v </p>
+<h3 id="_13">保存退出<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>ZZ 保存退出</p>
+<p>:n1,n2 w [filename] 将n1到n2保存为filename</p>
+<p>:r [filename] 读入文件内容</p>
+<h3 id="_14">多文件编辑<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>vim file1 file2</p>
+<p>:n 下一个文件</p>
+<p>:N 上一个文件</p>
+<p>:files 查看所有文件</p>
+<h3 id="_15">多窗口编辑<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>:sp 分割窗口</p>
+<p>:q 关闭窗口</p>
+<p>ctrl+w &amp; j 跳转到下一个窗口</p>
+<p>ctrl+w &amp; k 跳转到上一个窗口</p>
 <h2 id="idea">Idea<a class="headerlink" href="#idea" title="Permanent link">&para;</a></h2>
 <p>Ctrl+Option+O 自动优化import</p>
 <p>Command+shift+8 列选/取消列选</p>
 <h2 id="typora">Typora<a class="headerlink" href="#typora" title="Permanent link">&para;</a></h2>
-<h3 id="_2">格式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_16">格式<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
 <p>Command+1～6  一～六级标题</p>
 <p>Command+b  字体加粗</p>
 <p>Command+i  字体倾斜</p>
 <p>Command+u  下划线</p>
 <p>Ctrl+shift+` 删除线</p>
-<h3 id="_3">移动<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_17">移动<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <p>Fn+左方向   返回Typora顶部</p>
 <p>Fn+右方向   返回Typora底部</p>
-<h3 id="_4">选择<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_18">选择<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <p>Command+d 选中单词</p>
 <p>Command+e 选中相同格式的文字</p>
-<h3 id="_5">操作<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_19">操作<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
 <p>Command+z 取消</p>
-<h3 id="_6">表格<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_20">表格<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
 <p>Option+Command+t</p>
 <h2 id="iterm2">iTerm2<a class="headerlink" href="#iterm2" title="Permanent link">&para;</a></h2>
 <p>左右分屏 Cmd+d</p>

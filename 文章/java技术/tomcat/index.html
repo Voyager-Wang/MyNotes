@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
     
-    <title>Cpu占用率分析 - 我的笔记</title>
+    <title>Tomcat - 我的笔记</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -192,7 +192,7 @@
                         
                             
 <li >
-    <a href="../../java%E6%8A%80%E6%9C%AF/idea/">IDEA</a>
+    <a href="../idea/">IDEA</a>
 </li>
 
                         
@@ -225,78 +225,16 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#_1">用户态和内核态</a></li>
-        <li class="first-level "><a href="#cpu">cpu占用率</a></li>
-        <li class="first-level "><a href="#sleep-wait">sleep() wait()</a></li>
-        <li class="first-level "><a href="#top">top使用</a></li>
+        <li class="first-level active"><a href="#tomcat">Tomcat 支持中文路径</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h2 id="_1">用户态和内核态<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>内核态（Kernel Mode）：运行操作系统程序，操作硬件
-用户态（User Mode）：运行用户程序
-- 内核态与用户态是操作系统的两种运行级别，当程序运行在3级特权级上时，就可以称之为运行在用户态。<strong>因为这是最低特权级，是普通的用户进程运行的特权级，大部分用户直接面对的程序都是运行在用户态；</strong>
-- 当程序运行在0级特权级上时，就可以称之为运行在内核态。
-- 运行在用户态下的程序不能直接访问操作系统内核数据结构和程序。当我们在系统中执行一个程序时，大部分时间是运行在用户态下的，在其需要操作系统帮助完成某些它没有权力和能力完成的工作时就会切换到内核态（比如操作硬件）。</p>
-<p>往往我们的系统的资源是固定的，例如内存2G，CPU固定，磁盘2TB，网络接口固定。所以就需要操作系统对资源进行有效的利用。假设某个应用程序过分的访问这些资源，就会导致整个系统的资源被占用，如果不对这种行为进行限制和区分，就会导致资源访问的冲突。所以，Linux的设计的初衷：<strong>给不同的操作给与不同的“权限”</strong>。Linux操作系统就将权限等级分为了2个等级，分别就是内核态和用户态。</p>
-<p>各位有没有发现，前面讲了这么多内核态和用户态什么不同，其实用一句话就能概括：<strong>它们权限不同</strong>。用户态的进程能够访问的资源受到了极大的控制，而运行在内核态的进程可以“<strong>为所欲为</strong>”。</p>
-<p>从用户态到内核态切换可以通过三种方式：</p>
-<ul>
-<li>
-<ol>
-<li>系统调用，这个上面已经讲解过了，在我公众号之前的文章也有讲解过。其实系统调用本身就是中断，但是软件中断，跟硬中断不同。</li>
-</ol>
-</li>
-<li>
-<ol start="2">
-<li>异常：如果当前进程运行在用户态，如果这个时候发生了异常事件，就会触发切换。例如：缺页异常。</li>
-</ol>
-</li>
-<li>
-<ol start="3">
-<li>外设中断：当外设完成用户的请求时，会向CPU发送中断信号。</li>
-</ol>
-</li>
-</ul>
-<p><img src="https://tinkerer-pic.oss-cn-hangzhou.aliyuncs.com/picgo/image-20200812202318020.png" alt="image-20200812202318020" style="zoom: 33%;" /></p>
-<h2 id="cpu">cpu占用率<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h2>
-<p><code>user</code>（通常缩写为us），代表用户态CPU时间。注意，它包括下面的<code>nice</code>时间，但包括了<code>guest</code>时间。</p>
-<p><code>nice</code>（通常缩写为ni），代表低优先级用户态CPU时间，也就是进程的nice值被调整为1-19之间是的CPU时间。</p>
-<p><code>system</code>（通常缩写为sys），代表内核态CPU时间</p>
-<p><code>idle</code>（通常缩写为id），代表空闲时间。注意，它不包括I/O等待时间（<code>iowait</code>）</p>
-<p><code>iowait</code>（通常缩写为wa），代表等待I/O的CPU时间，cpu出于空闲且有未完成的I/O请求</p>
-<p><code>irq</code>（通常缩写为hi），代表处理硬中断的CPU时间</p>
-<p><code>softirq</code>（通常缩写为si），代表处理软中断的CPU时间，系统调用时发生软中断</p>
-<p><code>steal</code>（通常缩写为st），代表当系统运行在虚拟机中的时候，被其他虚拟机占用的CPU时间</p>
-<p><code>guest</code>（通常缩写为<code>guest</code>），代表通过虚拟化运行其他操作系统的时间，也就是运行虚拟机的CPU时间</p>
-<p>理解：</p>
-<ul>
-<li>
-<p><code>user</code>+<code>system</code>+<code>idle</code>+<code>iowait</code>=100%？</p>
-</li>
-<li>
-<p><code>idle</code>+<code>iowait</code>=空闲cpu</p>
-</li>
-<li><code>iowait</code>: 单纯的iowait高不能说明I/O负载高https://www.linuxprobe.com/understand-iowait.html</li>
-</ul>
-<h2 id="sleep-wait">sleep() wait()<a class="headerlink" href="#sleep-wait" title="Permanent link">&para;</a></h2>
-<p>Thread.sleep()或object.wait()后，都会释放cpu资源</p>
-<p>Thread.sleep()不会释放占用的锁</p>
-<p>object.wait()会释放占用的锁</p>
-<h2 id="top">top使用<a class="headerlink" href="#top" title="Permanent link">&para;</a></h2>
-<p>在top命令运行过程中可以通过top的内部命令做显示方式的控制。  </p>
-<p>​    1- 开启或关闭显示所有cpu使用详细情况</p>
-<p>l - 关闭或开启第一部分第一行 top 信息的表示</p>
-<p>t - 关闭或开启第一部分第二行 Tasks 和第三行 Cpus 信息的表示</p>
-<p>m - 关闭或开启第一部分第四行 Mem 和 第五行 Swap 信息的表示</p>
-<p>N - 以 PID 的大小的顺序排列表示进程列表（第三部分后述）</p>
-<p>P - 以 CPU 占用率大小的顺序排列进程列表 （第三部分后述）</p>
-<p>M - 以内存占用率大小的顺序排列进程列表 （第三部分后述）</p>
-<p>h - 显示帮助</p>
-<p>n - 设置在进程列表所显示进程的数量</p>
-<p>q - 退出 top</p>
-<p>s - 改变画面更新频率（输入数字）</p></div>
+<h2 id="tomcat">Tomcat 支持中文路径<a class="headerlink" href="#tomcat" title="Permanent link">&para;</a></h2>
+<p>https://blog.csdn.net/MAO_JIN_DAO/article/details/78485044</p>
+<p>在/conf/server.xml文件<Connector ports=”8080” ……/>中添加</p>
+<p>URIEncoding=“UTF-8” useBodyEncodingForURI=”true”</p>
+<p>然后重启tomcat。</p></div>
         
         
     </div>
