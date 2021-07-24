@@ -1,0 +1,15 @@
+site/
+docs/设计文档/
+docs/运维问题累积.md
+docs/draft.md
+docs/note.md
+docs/入职指引.md
+*.png
+*.img
+*/*.png
+*/*.img
+*/*/*.png
+*/*/*.img
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store

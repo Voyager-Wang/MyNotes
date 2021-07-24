@@ -1,0 +1,40 @@
+
+site_name: 我的笔记
+site_description: 记录工作和学习文档
+
+use_directory_urls: true
+
+theme: cinder
+plugins:
+  - redirects
+markdown_extensions:
+  - toc:
+      permalink: True
+  - smarty
+  - sane_lists
+  - extra
+  - tables
+  - admonition
+  - pymdownx.tilde
+nav:
+  - 快捷方式: keymap.md
+  - 文章:
+    - 大数据: 
+      - Alluxio: 文章/大数据/alluxio.md
+      - Hudi: 文章/大数据/hudi.md
+      - Spark: 文章/大数据/spark-streaming.md
+      - Yarn: 文章/大数据/yarn.md
+    - 数据库:
+      - Canal: 文章/数据库技术/Canal学习记录.md
+      - LogMinor: 文章/数据库技术/LogMiner.md
+      - MySQL: 
+        - GTID: 文章/数据库技术/MySQL GTID set处理技术.md
+    - 日记:
+      - 起航: 文章/日记/A-Voyager_起航.md
+      - 航行日志: 文章/日记/Diary-航行日志.md
+      - Engine1-冥想: 文章/日记/Engine-1_冥想体悟.md
+      - Engine3-局外人: 文章/日记/Engine-3_局外人.md
+  - java :
+    - IDEA : 文章/java技术/idea.md
+  - ToDo: ToDo.md
+  - GitHub: https://github.com/arcticXXX
