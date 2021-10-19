@@ -2,6 +2,10 @@
 
 ### 翻页
 
+ctrl+y 向上翻一行（常用）
+
+ctrl+e 向下翻一行（常用）
+
 ctrl+f 向下翻页（常用）
 
 ctrl+b 向上翻页（常用）
@@ -15,6 +19,8 @@ ctrl+u 向上翻半页
 hjkl 方向键【head jump kick last】（常用）
 
 [space] 向后移动一个字符，自动跳转到下一行（常用）
+
+[backspace] 向前移动一个字符，自动跳转到上一行（常用）
 
 [enter] 向后移动一行（到行首）（常用）
 
@@ -252,5 +258,88 @@ git branch --set-upstream-to=origin/master master
 
 
 
+## hive
+
+-- 查询数据
+
+select * from db_ndc.test_wangtao3_06022;
+
+-- 查看指定分区的数据
+
+select * from db_ndc.test_wangtao3_06022 where day ='curr_day_full';
+
+select * from db_ndc.test_wangtao3_06022 where day ='2021-06-01';
 
 
+
+-- 查看表结构
+
+show create table db_ndc.test_wangtao3_06022;
+
+-- 查看表详细信息（包含路径）
+
+describe formatted db_ndc.test_wangtao3_06022;
+
+
+
+-- 查看partition
+
+show partitions db_ndc.test_wangtao3_06022;
+
+-- 删除partition
+
+alter table db_ndc.test_wangtao3_0602  DROP IF EXISTS partition(day="2021-06-01");
+
+
+
+-- 查看目录中的文件
+
+-- hive目录
+
+dfs -ls hdfs://bdms-test/user/test_bdms/hive_db/db_ndc.db/test_wangtao3_0602;
+
+dfs -ls hdfs://bdms-test/user/test_bdms/hive_db/db_ndc.db/test_wangtao3_0602/day=2021-06-01
+
+dfs -ls hdfs://bdms-test/user/test_bdms/hive_db/db_ndc.db/test_wangtao3_0602/day=curr_day_full;
+
+
+
+-- schema目录
+
+dfs -ls hdfs://bdms-test/user/test_bdms/hive_db/ndc/ndc_schema/jobId-1714/ddb/test105/
+
+
+
+-- realtime目录
+
+dfs -ls hdfs://bdms-test/user/test_bdms/hive_db/ndc/ndc_realtime/jobId-1714/ddb/test105/
+
+-- temp目录
+
+dfs -ls hdfs://bdms-test/user/test_bdms/hive_db/ndc/ndc_temp/jobId-1714/ddb/test105/
+
+-- stage目录
+
+dfs -ls hdfs://bdms-test/user/test_bdms/hive_db/ndc/ndc_stage/jobId-1714/ddb/test105/
+
+
+
+-- 全量目录
+
+dfs -ls hdfs://bdms-test/user/test_bdms/hive_db/ndc/ndc_full/jobId-1710/ddb/test105/
+
+
+
+-- 查看文件内容
+
+dfs -cat hdfs://bdms-test/user/test_bdms/hive_db/ndc/ndc_temp/jobId-1714/ddb/test105/srcDb-d3RfdGVzdA==_secondaryName-s1_ddlId-1_threadId-2761_time-2021060211_mv-1622603382466.csv
+
+dfs -cat hdfs://bdms-test/user/test_bdms/hive_db/ndc/ndc_temp/jobId-1710/ddb/test105/srcDb-d3RfdGVzdA==_secondaryName-s1_ddlId-0_threadId-249_time-2021060119_mv-1622547096139.csv
+
+
+
+-- 删除
+
+dfs -rm -r hdfs://bdms-test/user/test_bdms/hive_db/db_ndc.db/test_wangtao3_0602/day=2021-05-31
+
+[home](#翻页)

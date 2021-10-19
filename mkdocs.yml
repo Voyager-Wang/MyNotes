@@ -10,6 +10,7 @@ plugins:
 markdown_extensions:
   - toc:
       permalink: True
+      slugify: !!python/name:pymdownx.slugs.uslugify
   - smarty
   - sane_lists
   - extra
